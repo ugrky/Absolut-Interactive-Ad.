@@ -1,0 +1,121 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Absolut Rooftop Party</title>
+  <meta name="description" content="Absolut Rooftop Party">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" href="https://unpkg.com/beardcss/dist/beard.css">
+  <script src="javascript/jquery.js"></script>
+  <script src="javascript/typed.js"></script>
+</head>
+<script>
+  function animateArt(){
+    { // defined variables
+      s = window.screen;
+      w = s.width; //width of window
+      h = s.height; // height of window
+      m = Math.random; // to get a number between 0-1
+      p = [];
+      for(i=0; i < 300 ; p[i++] = 0){
+        p[i] = 1;
+      }
+    }
+
+    var img=document.getElementById("bottle");
+    d.getContext('2d').drawImage(img, 0, 0);
+    var ctx = d.getContext('2d');
+    imgData = ctx.getImageData(0,0,300,700);
+
+    { // return the data of pixel colors:
+      var pixelData = [];
+      for (var i = 0; i < 210000 ; i ++) {
+          var red = imgData.data[0 + i*4];
+          var green = imgData.data[1 + i*4];
+          var blue = imgData.data[2 + i*4];
+          var alpha = imgData.data[3 + i*4];
+          var colorVar = 'rgba(' + red + ', ' + green + ', ' + blue + ',' + alpha + ')';
+          pixelData.push(colorVar);
+        }
+      console.log(pixelData);
+    }
+
+    { // created multidimentional array to keep the track of color data
+      var minimized = new Array();
+      for (var i = 0; i < 140 ; i++){
+        minimized[i] = new Array();
+      }
+      for(var i = 0 ; i < 140 ; i++){
+        for (var j = 0; j < 60 ; j++){
+          minimized[i].push(pixelData[1500 * i + j * 5 - 1]) ;
+        }
+      }
+    }
+
+    verticalColor = 0;
+    function randomChar (){ return String.fromCharCode(48+m()*2); }
+    setInterval(
+      function(){
+        c.getContext('2d').fillStyle = 'rgba(0,0,0,0.005)';
+        c.getContext('2d').fillRect(0,0,w,h);
+        p.map(
+          function(v,i){
+              var verticalColor = (v<700) ? v/5 : 138;
+              c.getContext('2d').fillStyle =  minimized[verticalColor][i];
+              c.getContext('2d').font='8px coders';
+              c.getContext('2d').fillText(randomChar(), i*5, v + 5);
+              c.getContext('2d').fillStyle = minimized[verticalColor][i];
+              minHeight = 700; // letters should slide as few as this
+              num = minHeight + 20000*m(); // the real distance that letters slide
+              p[i] = (v > num) ? 0 : v + 5;
+          }
+        );
+      }, 10
+    )
+  }
+
+  $(function(){
+        $(".element").typed({
+          strings: ["Submit your e-mail to GUEST table in SQL to get the party ticket.", "If you don't know SQL programming, you can’t sit with us..."],
+          typeSpeed: 0
+        });
+    });
+
+    //auto expand textarea
+  function adjust_textarea(h) {
+      h.style.height = "20px";
+      h.style.height = (h.scrollHeight)+"px";
+  }
+
+  function direct() {
+    var sqlArray = "SELECTFROMWHEREORANDALTERTABLECREATEDELETEBEGINENDELSEGROUPALUESINTOINSERTRIGHTLEFTJOINUNIONALL";
+    var str =  document.getElementById('entry').value;
+    if (str == "") {window.location = "fail.html"; return}
+    var words = str.split(" ");
+    for(var i = 0; i < words.length ; i++){
+      var n = sqlArray.search(words[i]);
+        if(n != -1) {
+        window.location = "success.html";
+        return;
+        }
+      }
+    window.location = "fail.html";
+  }
+
+</script>
+  <body class="df aic jcc" onload="animateArt();">
+      <canvas id="d" width="300" height="700" style="display:none;"></canvas>
+      <canvas id="c" width="300" height="700"></canvas>
+      <div class="text-holder">
+        <div style="font-size: 65px; font-family: 'coders';">ABSOLUT geek party @ Rooftop Istanbul</div>
+        <div style="font-size: 15px; font-family: 'coders';">June 12, 2016 - 08.00 p.m. | Open Air Rooftop Party in Mariott Resorts Istanbul</div>
+        <div class="element" style="font-size:20px; display: inline;"></div>
+        <div class="form-style-8">
+          <input id="entry" type="text" name="field2" placeholder="Write the SQL statement and INSTERT your e-mail to our database to get the ticket, table name: GUESTS" />
+          <input type="submit" value="Give me the ticket" onclick="direct();"/>
+        </div>
+      </div>
+      <img id="bottle" width="300" height="700" src="bottle7.png" style="display:none;">
+</body>
+</html>

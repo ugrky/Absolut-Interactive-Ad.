@@ -1,0 +1,41 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Ugur Kaya - Absolut Rooftop Party</title>
+  <meta name="description" content="Ugur Kaya - Absolut Rooftop Party">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" href="https://unpkg.com/beardcss/dist/beard.css">
+  <script src="javascript/jquery.js"></script>
+  <script src="javascript/typed.js"></script>
+</head>
+<script>
+  // Typed.js effect:
+  $(function(){
+      $(".element").typed({
+        strings: ["Let me check...", "It doesn't seem like an SQL statement", "Sorry loser..."],
+        typeSpeed: 0
+      });
+  });
+  // Auto expand text area:
+  function adjust_textarea(h) {
+      h.style.height = "20px";
+      h.style.height = (h.scrollHeight)+"px";
+  }
+
+  // Redirect to home page:
+  function direct(){
+    window.location = "index.html";
+  }
+
+</script>
+  <body class="df aic jcc">
+    <div class="text-holder" style="text-align:center; height:100px" >
+    <div class="element" style="font-size:20px; display: inline;"></div>
+    <div class="form-style-8" style="text-align:center;">
+      <input type="button" value="Go back" onclick="direct();" style="display:inline;"/>
+    </div>
+    </div>
+</body>
+</html>

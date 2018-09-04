@@ -1,0 +1,118 @@
+@font-face {
+    font-family: 'coders';
+    src: url('Minecraft.ttf');
+}
+
+body {
+    font-family: 'coders';
+    color:white;
+    margin:0;
+    padding:0;
+    background-color: black;
+}
+
+.text-holder {
+    width: 700px;
+    height: 300px;
+    transform: translateY(50px);
+}
+
+.element{
+  font-family: 'coders';
+}
+
+#bg{
+  position: absolute;
+}
+
+.typed-cursor{
+    font-size: 40px;
+    opacity: 1;
+    -webkit-animation: blink 0.7s infinite;
+    -moz-animation: blink 0.7s infinite;
+    animation: blink 0.7s infinite;
+}
+
+@keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+
+@-webkit-keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+
+@-moz-keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+
+
+.form-style-8{
+    margin: 0px;
+}
+
+
+.form-style-8 input[type="text"]
+{
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    outline: none;
+    display: inline-block;
+    color:white;
+    width: 100%;
+    padding: 7px;
+    padding-left: 0px;
+    font-family: 'coders';
+    border: none;
+    border-bottom: 1px solid #ddd;
+    background: transparent;
+    margin-bottom: 10px;
+    font: 16px Arial, Helvetica, sans-serif;
+    height: 45px;
+}
+.form-style-8 input[type="button"],
+.form-style-8 input[type="submit"]{
+    -moz-box-shadow: inset 0px 1px 0px 0px #00335C;
+    -webkit-box-shadow: inset 0px 1px 0px 0px #00335C;
+    box-shadow: inset 0px 1px 0px 0px #00335C;
+    background-color: white;
+    display: inline-block;
+    cursor: pointer;
+    color: black;
+    font-family: 'coders';
+    font-size: 14px;
+    padding: 8px 18px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+.form-style-8 input[type="button"]:hover,
+.form-style-8 input[type="submit"]:hover {
+    background:linear-gradient(to bottom, #00335C 5%, #00335C 100%);
+    background-color:#00335C;
+}
+
+::-webkit-input-placeholder {
+       font-family: 'coders';
+       font-size: 13px;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+       font-family: 'coders';
+       font-size: 13px;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+       font-family: 'coders';
+       font-size: 13px;
+}
+
+:-ms-input-placeholder {
+      font-family: 'coders';
+      font-size: 13px;
+}
